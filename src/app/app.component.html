@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container" *ngIf="weatherData">
 
   <div class="upper-data">
-    <img src="cold.jpg" />
-    <img src="hot.jpg" />
+    <img src="hot.jpg" alt="hot weather" *ngIf="weatherData.main.temp > 260" />
+    <img src="cold.jpg" alt="cold weather" *ngIf="weatherData.main.temp <= 260" />
     <div class="weather-data">
-      <div class="location">Wellington</div>
-      <div class="temperature">{{ 14.40 | number: '1.0-0' }}°C</div>
+      <div class="location">{{ weatherData.name }}</div>
+      <div class="temperature">{{ weatherData.main.temp }}K</div>
     </div>
   </div>
 
@@ -16,45 +16,45 @@
     <div class="more-info-container">
       <div class="info-block">
         <div class="info-block-label">
-          <img src="min.png">
+          <img src="min.png" alt="minimum temperature">
           <span>Min</span>
         </div>
         <div class="info-block-value">
-          10°C
+          {{ weatherData.main.temp_min }}K
         </div>
       </div>
 
       <div class="info-block">
         <div class="info-block-label">
-          <img src="max.png">
+          <img src="max.png" alt="maximum temperature">
           <span>Max</span>
         </div>
         <div class="info-block-value">
-          30°C
+          {{ weatherData.main.temp_max }}K
         </div>
       </div>
 
       <div class="info-block">
         <div class="info-block-label">
-          <img src="humidity.png">
+          <img src="humidity.png" alt="humidity">
           <span>Humidity</span>
         </div>
         <div class="info-block-value">
-          77%
+          {{ weatherData.main.humidity }}%
         </div>
       </div>
 
       <div class="info-block">
         <div class="info-block-label">
-          <img src="wind.png">
+          <img src="wind.png" alt="wind speed">
           <span>Wind</span>
         </div>
         <div class="info-block-value">
-          11 km/h
+          {{ weatherData.wind.speed }} km/h
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<router-outlet />
+<router-outlet></router-outlet>

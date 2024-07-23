@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherService } from '../../services/weather.service';
 import { CommonModule } from '@angular/common';
+import { SearchbarComponent } from '../searchbar/searchbar.component';
 
 @Component({
   selector: 'app-weather',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, WeatherComponent],
+  imports: [CommonModule, HttpClientModule, WeatherComponent,SearchbarComponent],
   templateUrl: './weather.component.html',
   styleUrl: './weather.component.css'
 })

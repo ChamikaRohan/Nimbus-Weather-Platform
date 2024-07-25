@@ -1,6 +1,6 @@
 <div class="messageBox">
-    <input required="" placeholder="Search City" type="text" id="messageInput" />
-    <button id="sendButton">
+    <input required="" placeholder="Search City" type="text" id="messageInput" [(ngModel)]="cityName"/>
+    <button id="sendButton" (click)="getWeatherData()">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
         <path
           fill="none"

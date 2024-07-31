@@ -22,7 +22,7 @@ export class WeatherComponent {
     this.weatherService.getWeatherData(this.cityName).subscribe(
       data => {
         this.weatherData = data;
-        // console.log(this.weatherData);
+        // console.log(this.weatherData)
       },
       error => {
         console.error('Error fetching weather data', error);
